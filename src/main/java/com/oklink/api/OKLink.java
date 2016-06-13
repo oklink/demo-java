@@ -4,7 +4,7 @@ public interface OKLink {
 	
 	
 	public String getTicker(String symbol) throws Exception;
-	public String getNationList()throws Exception;
+	public String getCountryList()throws Exception;
 	public String setRevenue(int type,int min,int max,int percent_fee) throws Exception;
 	public String setLimitAmount(int amount)throws Exception;
 	public String setPayMode(int pay_mode)throws Exception;

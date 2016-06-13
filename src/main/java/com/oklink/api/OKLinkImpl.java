@@ -30,9 +30,9 @@ public class OKLinkImpl implements OKLink {
 	}
 	
 	@Override
-	public String getNationList() throws Exception {
+	public String getCountryList() throws Exception {
 		// TODO Auto-generated method stub
-		String nationsUrl = "/api/v1/nations.do";
+		String nationsUrl = "/api/v1/country.do";
 		return httpUtil.doPOST(nationsUrl, null);
 	}
 	@Override
@@ -87,11 +87,11 @@ public class OKLinkImpl implements OKLink {
 	}
 	
 	@Override
-	public String createRemit(int nationId,int transferNetwork,int payMode,double receiveAmount,double sendAmount,String receiveName,String receivePhone,String sendName,String senderPhone,String payBankInfo) throws Exception {
+	public String createRemit(int countryId,int transferNetwork,int payMode,double receiveAmount,double sendAmount,String receiveName,String receivePhone,String sendName,String senderPhone,String payBankInfo) throws Exception {
 		// TODO Auto-generated method stub
 		String Url = "/api/v1/create_remit.do";
 		Map<String, String> params = new HashMap<String, String>();
-		params.put("nation_id",nationId+"");  
+		params.put("country_id",countryId+"");  
 		params.put("transfer_network", transferNetwork+"");//1:OKD 2:BTC
 		params.put("pay_mode",payMode+""); //1:Cash 2:Bank transfer
 		if(sendAmount!=0d){
