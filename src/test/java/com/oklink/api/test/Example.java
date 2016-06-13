@@ -16,7 +16,7 @@ public class Example {
 		 // #common api
 		
 		 //result = oklink.getTicker("BTC");
-		 //result = oklink.getNationList();
+		 //result = oklink.getCountryList();
 		 
 		 
 		 //#setting api
