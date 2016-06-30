@@ -13,7 +13,7 @@ public interface OKLink {
 	public String setBusinessStatus(int status)throws Exception;
 	
 	
-	public String createRemit(int nationId,int transferNetwork,int payMode,double receiveAmount,double sendAmount,String receiveName,String receivePhone,String sendName,String senderPhone,String payBankInfo) throws Exception ;
+	public String createRemit(int nationId,int transferNetwork,int payMode,double receiveAmount,double sendAmount,String receiveName,String receivePhone,String sendName,String senderPhone,String payBankInfo,boolean isCreateNow) throws Exception ;
 	public String getRemitInfo(long remitId)throws Exception;
 	
 	public String getPayInfo(long remitId)throws Exception;

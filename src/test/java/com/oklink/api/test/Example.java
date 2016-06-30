@@ -29,7 +29,7 @@ public class Example {
 		  
 		  
 		 //#remitance api 
-	     //result = oklink.createRemit(89,1,1,0,153,"lisi","86,15001137489","yuliang","86,15001137489","") ;  //269
+	     //result = oklink.createRemit(89,1,1,0,153,"lisi","86,15001137489","yuliang","86,15001137489","",true) ;  //269
 		 //result = oklink.getRemitInfo(267);
 		 //result = oklink.getRemitList(2, 1, 10, 5);
 		
