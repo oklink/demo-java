@@ -35,20 +35,10 @@ public class OKLinkImpl implements OKLink {
 		String nationsUrl = "/api/v1/country.do";
 		return httpUtil.doPOST(nationsUrl, null);
 	}
-	@Override
-	public String setRevenue(int type, int min, int max, int percent_fee) throws Exception {
-		// TODO Auto-generated method stub
-		String url ="/api/v1/revenue.do";
-		Map<String, String> params = new HashMap<String, String>();
-		params.put("type",type+"");
-		params.put("min", min+"");
-		params.put("max", max+"");
-		params.put("percent_fee", percent_fee+"");
-		return httpUtil.doPOST(url,params) ;
-	}
+	
 
 	
-	public String setBusinessStatus(int status) throws Exception {
+	public String setDeliveryStatus(int status) throws Exception {
 		// TODO Auto-generated method stub
 		String url ="/api/v1/business_status.do";
 		Map<String, String> params = new HashMap<String, String>();
@@ -56,35 +46,8 @@ public class OKLinkImpl implements OKLink {
 		return httpUtil.doPOST(url,params) ;
 	}
 
-	@Override
-	public String setLimitAmount(int amount) throws Exception {
-		// TODO Auto-generated method stub
-		String url = "/api/v1/limit_amount.do";
-		Map<String, String> params = new HashMap<String, String>();
-		params.put("amount",amount+""); 
-		return httpUtil.doPOST(url, params);
-	}
 	
-	@Override
-	public String setPayMode(int pay_mode) throws Exception {
-		// TODO Auto-generated method stub
-		String url = "/api/v1/payout_method.do";
-		Map<String, String> params = new HashMap<String, String>();
-		params.put("pay_mode",pay_mode+""); 
-		return httpUtil.doPOST(url, params);
-	}
 	
-	@Override
-	public String setTransferNetWork(double outbound_rate, int targetCurrent, int plat,int isOpen) throws Exception {
-		// TODO Auto-generated method stub
-		String url = "/api/v1/transfer_network.do";
-		Map<String, String> params = new HashMap<String, String>();
-		params.put("outbound_rate",outbound_rate+"");
-		params.put("is_open", isOpen+"");
-		params.put("target_currency", targetCurrent+"");
-		params.put("plat", plat+"");
-		return httpUtil.doPOST(url, params);
-	}
 	
 	@Override
 	public String createRemit(int countryId,int transferNetwork,int payMode,double receiveAmount,double sendAmount,String receiveName,String receivePhone,String sendName,String senderPhone,String payBankInfo,boolean isCreateNow) throws Exception {
@@ -147,14 +110,6 @@ public class OKLinkImpl implements OKLink {
 		return httpUtil.doPOST(Url, params);
 	}
 
-	@Override
-	public String setReceiveBtcAddress(String address) throws Exception {
-		// TODO Auto-generated method stub
-		String Url = "/api/v1/receive_address.do";
-		Map<String, String> params = new HashMap<String, String>();
-		params.put("address",address);
-		return httpUtil.doPOST(Url, params);
-	}
 
 	@Override
 	public String getRemitInfo(long remitId) throws Exception {
@@ -213,17 +168,13 @@ public class OKLinkImpl implements OKLink {
 	}
 
 	
-	public String uploadImg(long remitId, String imgPath) throws Exception {
+	public String getBankInfo(int country_id) throws Exception {
 		// TODO Auto-generated method stub
-		String url = "/api/v1/upload_timg.do";
-		
-		MultipartEntityBuilder mub = MultipartEntityBuilder.create();
-		mub.addBinaryBody("img",new File(imgPath));
-		mub.addTextBody("remit_id", remitId+"");
-		
-		return httpUtil.doPOST(url, mub.build());
+		String url = "/api/v1/get_bankinfo.do";
+		Map<String, String> params = new HashMap<String, String>();
+		params.put("country_id",country_id+"");
+		return httpUtil.doPOST(url, params);
 	}
-
 	
 
 
