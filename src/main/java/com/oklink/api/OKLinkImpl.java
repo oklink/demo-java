@@ -112,11 +112,12 @@ public class OKLinkImpl implements OKLink {
 
 
 	@Override
-	public String getRemitInfo(long remitId) throws Exception {
+	public String getRemitInfo(long remitId,int type) throws Exception {
 		// TODO Auto-generated method stub
 		String url = "/api/v1/remit_info.do";
 		Map<String, String> params = new HashMap<String, String>();
 		params.put("remit_id",remitId+"");
+		params.put("type",type+"");
 		return httpUtil.doPOST(url, params);
 	}
 
@@ -173,6 +174,16 @@ public class OKLinkImpl implements OKLink {
 		String url = "/api/v1/get_bankinfo.do";
 		Map<String, String> params = new HashMap<String, String>();
 		params.put("country_id",country_id+"");
+		return httpUtil.doPOST(url, params);
+	}
+
+
+	@Override
+	public String reject(long remitId) throws Exception {
+		// TODO Auto-generated method stub
+		String url = "/api/v1/reject.do";
+		Map<String, String> params = new HashMap<String, String>();
+		params.put("remit_id",remitId+"");
 		return httpUtil.doPOST(url, params);
 	}
 	
