@@ -179,9 +179,20 @@ public class OKLinkImpl implements OKLink {
 
 
 	@Override
-	public String reject(long remitId) throws Exception {
+	public String reject(long remitId,String hex,String reason) throws Exception {
 		// TODO Auto-generated method stub
 		String url = "/api/v1/reject.do";
+		Map<String, String> params = new HashMap<String, String>();
+		params.put("remit_id",remitId+"");
+		params.put("reject_hex",hex);
+		params.put("reason", reason);
+		return httpUtil.doPOST(url, params);
+	}
+
+	@Override
+	public String getRejectInfo(long remitId) throws Exception {
+		// TODO Auto-generated method stub
+		String url = "/api/v1/get_rejectinfo.do";
 		Map<String, String> params = new HashMap<String, String>();
 		params.put("remit_id",remitId+"");
 		return httpUtil.doPOST(url, params);

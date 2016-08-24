@@ -17,7 +17,8 @@ public interface OKLink {
 	
 	public String getRemitList(int type,int pageNo,int pagesize,int status)throws Exception;
 	public String accept(long remitId)throws Exception;
-	public String reject(long remitId)throws Exception;
+	public String getRejectInfo(long remitId)throws Exception;
+	public String reject(long remitId,String hex,String reason)throws Exception;
 	
 	public String getReciveInfo(long remitId)throws Exception;
 	public String appealReceive(long remitId,int pickupCode,String receiveHex)throws Exception;

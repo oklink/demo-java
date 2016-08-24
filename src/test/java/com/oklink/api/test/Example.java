@@ -9,16 +9,16 @@ import com.oklink.api.util.SignTool;
 public class Example {
 	
 	
-	private static final String KEY = "";  //apikey
-	private static final String SECRET = "";//secretkey
+	private static final String KEY = "728da0e3-e0b8-4644-8eae-497c105bf2b8";  //apikey
+	private static final String SECRET = "45D045DF950631776C0CB3F5CDA1A662";//secretkey
 
 	public static void main(String[] args) throws Exception {
-		OKLink oklink = OKLinkBuilder.getInstance().setHost("https://www.oklink.com")
+		OKLink oklink = OKLinkBuilder.getInstance().setHost("http://local.oklink.com")
                 .build(KEY, SECRET);
 		  String result = null;
 		 // #common api
 		
-		 //result = oklink.getTicker("BTC");
+		 //result = oklink.getTicker("EXRATE");
 		 //result = oklink.getCountryList();
 		 
 		 //#setting api
@@ -40,7 +40,15 @@ public class Example {
 		
 		 //#accept
 		 //result = oklink.accept(845);
-		
+		  
+		 //result = oklink.getRejectInfo(863);
+		 //JSONObject json = JSON.parseObject(result);
+         //JSONObject payInfo = json.getJSONObject("reject_info");
+         //String privateKeyWIF = SignTool.decodePrivateKeyWIF(payInfo.getString("aes256key"), "a1!", payInfo.getString("salt"));
+         //String hex = SignTool.verifyAndSignTransaction(payInfo.getString("reject_hex"),SignTool.COIN_TOKEN, privateKeyWIF,payInfo.getString("redeem_script"), true);
+         //result = oklink.reject(863, hex,"this is no good");
+		 
+		 
 		 //#receive
          //result = oklink.getReciveInfo(845);
          //JSONObject json = JSON.parseObject(result);
