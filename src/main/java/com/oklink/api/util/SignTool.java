@@ -175,18 +175,11 @@ public class SignTool {
      * @return
      */
     private static NetworkParameters getNetworkParameters(int coinType, boolean isTestNet) {
-        if (isTestNet) {
-            if (coinType == COIN_BTC) {
-                return TestNet3Params.get();
-            } else if (coinType == COIN_TOKEN) {
-                return OKTestNetParams.get();
-            }
-        } else {
-            if (coinType == COIN_BTC) {
-                return MainNetParams.get();
-            } else if (coinType == COIN_TOKEN) {
-                return OKMainNetParams.get();
-            }
+        
+        if (coinType == COIN_BTC) {
+            return MainNetParams.get();
+        } else if (coinType == COIN_TOKEN) {
+            return OKMainNetParams.get();
         }
         return null;
     }
