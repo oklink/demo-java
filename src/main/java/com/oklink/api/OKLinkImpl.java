@@ -40,7 +40,7 @@ public class OKLinkImpl implements OKLink {
 	
 	public String setDeliveryStatus(int status) throws Exception {
 		// TODO Auto-generated method stub
-		String url ="/api/v1/business_status.do";
+		String url ="/api/v1/delivery_status.do";
 		Map<String, String> params = new HashMap<String, String>();
 		params.put("status",status+"");
 		return httpUtil.doPOST(url,params) ;
