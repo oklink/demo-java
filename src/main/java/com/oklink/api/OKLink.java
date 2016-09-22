@@ -9,7 +9,10 @@ public interface OKLink {
 	public String setDeliveryStatus(int status)throws Exception;
 	
 	
-	public String createRemit(int nationId,int transferNetwork,int payMode,double receiveAmount,double sendAmount,String receiveName,String receivePhone,String receiveEmail,String sendName,String senderPhone,String senderEmail,String payBankInfo,boolean isCreateNow) throws Exception ;
+	public String createRemit(int nationId,int transferNetwork,int payMode,
+			double receiveAmount,double sendAmount,String receiveName,
+			String receivePhone,String receiveEmail,String sendName,String senderPhone,
+			String senderEmail,String payBankInfo,int pay_shopid,boolean isCreateNow) throws Exception ;
 	public String getRemitInfo(long remitId,int type)throws Exception;
 	
 	public String getPayInfo(long remitId)throws Exception;
