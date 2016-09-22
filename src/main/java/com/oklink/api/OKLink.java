@@ -24,6 +24,7 @@ public interface OKLink {
 	public String appealReceive(long remitId,int pickupCode,String receiveHex)throws Exception;
 	public String getUserInfo()throws Exception;
 	public String getBankInfo(int country_id)throws Exception;
+	public String getPayShopInfo(int country_id)throws Exception;
 	
 	
 }

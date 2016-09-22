@@ -197,6 +197,15 @@ public class OKLinkImpl implements OKLink {
 		params.put("remit_id",remitId+"");
 		return httpUtil.doPOST(url, params);
 	}
+
+	@Override
+	public String getPayShopInfo(int country_id) throws Exception {
+		// TODO Auto-generated method stub
+		String url = "/api/v1/get_payshop.do";
+		Map<String, String> params = new HashMap<String, String>();
+		params.put("country_id",country_id+"");
+		return httpUtil.doPOST(url, params);
+	}
 	
 
 
