@@ -50,7 +50,7 @@ public class OKLinkImpl implements OKLink {
 	
 	
 	@Override
-	public String createRemit(int countryId,int transferNetwork,int payMode,double receiveAmount,double sendAmount,String receiveName,String receivePhone,String sendName,String senderPhone,String payBankInfo,boolean isCreateNow) throws Exception {
+	public String createRemit(int countryId,int transferNetwork,int payMode,double receiveAmount,double sendAmount,String receiveName,String receivePhone,String receiveEmail,String sendName,String senderPhone,String senderEmail,String payBankInfo,boolean isCreateNow) throws Exception {
 		// TODO Auto-generated method stub
 		String Url = "/api/v1/create_remit.do";
 		Map<String, String> params = new HashMap<String, String>();
@@ -64,8 +64,10 @@ public class OKLinkImpl implements OKLink {
 		}
 		params.put("sender_name",sendName);
 		params.put("sender_phone",senderPhone);
+		params.put("sender_email",senderEmail);
 		params.put("receiver_name",receiveName);
 		params.put("receiver_phone",receivePhone);
+		params.put("receiver_email",receiveEmail);
 		params.put("pay_bank",payBankInfo);
 		if(isCreateNow){
 			params.put("is_create","1");

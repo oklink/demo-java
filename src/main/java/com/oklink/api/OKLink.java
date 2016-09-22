@@ -9,7 +9,7 @@ public interface OKLink {
 	public String setDeliveryStatus(int status)throws Exception;
 	
 	
-	public String createRemit(int nationId,int transferNetwork,int payMode,double receiveAmount,double sendAmount,String receiveName,String receivePhone,String sendName,String senderPhone,String payBankInfo,boolean isCreateNow) throws Exception ;
+	public String createRemit(int nationId,int transferNetwork,int payMode,double receiveAmount,double sendAmount,String receiveName,String receivePhone,String receiveEmail,String sendName,String senderPhone,String senderEmail,String payBankInfo,boolean isCreateNow) throws Exception ;
 	public String getRemitInfo(long remitId,int type)throws Exception;
 	
 	public String getPayInfo(long remitId)throws Exception;
@@ -24,6 +24,7 @@ public interface OKLink {
 	public String appealReceive(long remitId,int pickupCode,String receiveHex)throws Exception;
 	public String getUserInfo()throws Exception;
 	public String getBankInfo(int country_id)throws Exception;
+	
 	public String getPayShopInfo(int country_id)throws Exception;
 	
 	

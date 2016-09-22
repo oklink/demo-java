@@ -9,14 +9,14 @@ import com.oklink.api.util.SignTool;
 public class Example {
 	
 	
-	private static final String KEY = "728da0e3-e0b8-4644-8eae-497c105bf2b8";  //apikey
-	private static final String SECRET = "45D045DF950631776C0CB3F5CDA1A662";//secretkey
+	private static final String KEY = "";  //apikey	
+	private static final String SECRET = "";//secretke
 
 	public static void main(String[] args) throws Exception {
-		OKLink oklink = OKLinkBuilder.getInstance().setHost("http://local.oklink.com")
+		OKLink oklink = OKLinkBuilder.getInstance().setHost("https://www.oklink.com")
                 .build(KEY, SECRET);
 		  String result = null;
-		 // #common api
+		 //#common api
 		
 		 //result = oklink.getTicker("EXRATE");
 		 //result = oklink.getCountryList();
@@ -25,28 +25,29 @@ public class Example {
 		 //result = oklink.setDeliveryStatus(1);
 		  
 		 //#remitance api 
-		 //result = oklink.getBankInfo(89);
-	     //result = oklink.createRemit(89,1,2,0,1000,"zhangsan1","86,15001137489","lisi1","86,15001137489","78@127@Ordinary@11122222333",true) ;  //269
+		 //result = oklink.getBankInfo(143);
+	     //result = oklink.createRemit(143,1,2,0,3,"zhangsan1","86,15001137489","","lisi1","86,15001137489","","53@11122222333",true) ;  //269
 		 //result = oklink.getRemitInfo(845,1);
 		 //result = oklink.getRemitList(2, 1, 10, 5);
 		
 		 //#pay
-         //result = oklink.getPayInfo(845);
+         //result = oklink.getPayInfo(475);
+         //result = oklink.getPayShopInfo(143);
          //JSONObject json = JSON.parseObject(result);
          //JSONObject payInfo = json.getJSONObject("pay_info");
-         //String privateKeyWIF = SignTool.decodePrivateKeyWIF(payInfo.getString("aes256key"), "123!e", payInfo.getString("salt"));
+         //String privateKeyWIF = SignTool.decodePrivateKeyWIF(payInfo.getString("aes256key"), "aaa111!!!", payInfo.getString("salt"));
          //String hex = SignTool.verifyAndSignTransaction(payInfo.getString("pay_hex"),SignTool.COIN_TOKEN, privateKeyWIF,"", true);
-         //result = oklink.toPay(845, hex);
+         //result = oklink.toPay(475, hex);
 		
 		 //#accept
 		 //result = oklink.accept(845);
 		  
-		 //result = oklink.getRejectInfo(863);
+         //result = oklink.getRejectInfo(1081);
 		 //JSONObject json = JSON.parseObject(result);
-         //JSONObject payInfo = json.getJSONObject("reject_info");
-         //String privateKeyWIF = SignTool.decodePrivateKeyWIF(payInfo.getString("aes256key"), "a1!", payInfo.getString("salt"));
-         //String hex = SignTool.verifyAndSignTransaction(payInfo.getString("reject_hex"),SignTool.COIN_TOKEN, privateKeyWIF,payInfo.getString("redeem_script"), true);
-         //result = oklink.reject(863, hex,"this is no good");
+		 //JSONObject payInfo = json.getJSONObject("reject_info");
+		 //String privateKeyWIF = SignTool.decodePrivateKeyWIF(payInfo.getString("aes256key"), "1qazxsw@", payInfo.getString("salt"));
+		 //String hex = SignTool.verifyAndSignTransaction(payInfo.getString("reject_hex"),SignTool.COIN_TOKEN, privateKeyWIF,payInfo.getString("redeem_script"), true);
+		 //result = oklink.reject(1081, hex,"this is no good");
 		 
 		 
 		 //#receive
