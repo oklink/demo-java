@@ -13,7 +13,7 @@ public class Example {
 	private static final String SECRET = null;//secretke
 
 	public static void main(String[] args) throws Exception {
-		OKLink oklink = OKLinkBuilder.getInstance().setHost("http://local.oklink.com")
+		OKLink oklink = OKLinkBuilder.getInstance().setHost("https://www.oklink.com")
                 .build(KEY, SECRET);
 		  String result = null;
 		 //#common api
