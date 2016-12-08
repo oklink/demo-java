@@ -48,9 +48,12 @@ public class OKLinkImpl implements OKLink {
 
 	
 	
-	
 	@Override
-	public String createRemit(int countryId,int transferNetwork,int payMode,double receiveAmount,double sendAmount,String receiveName,String receivePhone,String receiveEmail,String sendName,String senderPhone,String senderEmail,String payBankInfo,int pay_shopid,boolean isCreateNow,double remitFee) throws Exception {
+	public String createRemit(int countryId, int transferNetwork, int payMode, double receiveAmount, double sendAmount,
+			String receiveName, String receivePhone, String receiveEmail, String sendName, String sender_birthdate,
+			String sender_certificate, String sender_certinum, String senderPhone, String senderEmail,
+			String payBankInfo, int pay_shopid, String pay_walletid, double remitFee, boolean isCreateNow)
+			throws Exception {
 		// TODO Auto-generated method stub
 		String Url = "/api/v1/create_remit.do";
 		Map<String, String> params = new HashMap<String, String>();
@@ -63,11 +66,15 @@ public class OKLinkImpl implements OKLink {
 		  params.put("receive_amount",receiveAmount+"");
 		}
 		params.put("sender_name",sendName);
+		params.put("sender_birthdate",sender_birthdate );
+		params.put("sender_certificate", sender_certificate);
+		params.put("sender_certinum", sender_certinum);
 		params.put("sender_phone",senderPhone);
 		params.put("sender_email",senderEmail);
 		params.put("receiver_name",receiveName);
 		params.put("receiver_phone",receivePhone);
 		params.put("receiver_email",receiveEmail);
+		params.put("pay_walletid", pay_walletid);
 		params.put("pay_shopid",pay_shopid+"");
 		params.put("remit_fee", remitFee+"");
 		params.put("pay_bank",payBankInfo);
@@ -210,6 +217,8 @@ public class OKLinkImpl implements OKLink {
 		params.put("country_id",country_id+"");
 		return httpUtil.doPOST(url, params);
 	}
+
+	
 	
 
 

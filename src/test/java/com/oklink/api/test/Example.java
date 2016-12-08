@@ -9,11 +9,11 @@ import com.oklink.api.util.SignTool;
 public class Example {
 	
 	
-	private static final String KEY = "";  //apikey	
-	private static final String SECRET = "";//secretke
+	private static final String KEY = null;  //apikey	
+	private static final String SECRET = null;//secretke
 
 	public static void main(String[] args) throws Exception {
-		OKLink oklink = OKLinkBuilder.getInstance().setHost("https://www.oklink.com")
+		OKLink oklink = OKLinkBuilder.getInstance().setHost("http://local.oklink.com")
                 .build(KEY, SECRET);
 		  String result = null;
 		 //#common api
@@ -25,9 +25,9 @@ public class Example {
 		 //result = oklink.setDeliveryStatus(1);
 		  
 		 //#remitance api 
-		 //result = oklink.getBankInfo(143);
-	     //result = oklink.createRemit(143,1,2,0,3,"zhangsan1","86,15001137489","","lisi1","86,15001137489","","53@11122222333",true) ;  //269
-		 //result = oklink.getRemitInfo(845,1);
+		 //result = oklink.getBankInfo(82);
+	     result = oklink.createRemit(82,1,3,0,299,"san1##zhang","86,15001137489","","si1##li","1985-10-12","PASSPORT","2343","86,15001137489","","53@11122222333",0,"wallet234",2.1,true) ;  //269
+		 //result = oklink.getRemitInfo(1697,1);
 		 //result = oklink.getRemitList(2, 1, 10, 5);
 		
 		 //#pay

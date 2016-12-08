@@ -11,8 +11,8 @@ public interface OKLink {
 	
 	public String createRemit(int nationId,int transferNetwork,int payMode,
 			double receiveAmount,double sendAmount,String receiveName,
-			String receivePhone,String receiveEmail,String sendName,String senderPhone,
-			String senderEmail,String payBankInfo,int pay_shopid,boolean isCreateNow,double remitFee) throws Exception ;
+			String receivePhone,String receiveEmail,String sendName,String sender_birthdate,String sender_certificate,String sender_certinum,String senderPhone,
+			String senderEmail,String payBankInfo,int pay_shopid,String pay_walletid,double remitFee,boolean isCreateNow) throws Exception ;
 	public String getRemitInfo(long remitId,int type)throws Exception;
 	
 	public String getPayInfo(long remitId)throws Exception;
