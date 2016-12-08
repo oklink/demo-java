@@ -26,8 +26,9 @@ public class Example {
 		  
 		 //#remitance api 
 		 //result = oklink.getBankInfo(82);
-	     result = oklink.createRemit(82,1,3,0,299,"san1##zhang","86,15001137489","","si1##li","1985-10-12","PASSPORT","2343","86,15001137489","","53@11122222333",0,"wallet234",2.1,true) ;  //269
+	     //result = oklink.createRemit(82,1,3,0,299,"san1##zhang","86,15001137489","","si1##li","1985-10-12","PASSPORT","2343","86,15001137489","","53@11122222333",0,"wallet234",2.1,true) ;  //269
 		 //result = oklink.getRemitInfo(1697,1);
+
 		 //result = oklink.getRemitList(2, 1, 10, 5);
 		
 		 //#pay
