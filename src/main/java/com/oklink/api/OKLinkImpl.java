@@ -102,32 +102,32 @@ public class OKLinkImpl implements OKLink {
 
 
 	@Override
-	public String getPayInfo(long remitId) throws Exception {
+	public String getPayInfo(String id) throws Exception {
 		// TODO Auto-generated method stub
 		String Url = "/api/v1/get_payinfo.do";
 		Map<String, String> params = new HashMap<String, String>();
-		params.put("remit_id",remitId+"");  
+		params.put("id",id);  
 		return httpUtil.doPOST(Url, params);
 		
 	}
 
 
-	public String toPay(long remitId, String hex) throws Exception {
+	public String toPay(String id, String hex) throws Exception {
 		// TODO Auto-generated method stub
 		String Url = "/api/v1/pay.do";
 		Map<String, String> params = new HashMap<String, String>();
-		params.put("remit_id",remitId+""); 
+		params.put("id",id); 
 		params.put("pay_hex", hex);
 		return httpUtil.doPOST(Url, params);
 	}
 
 
 	@Override
-	public String getRemitInfo(long remitId,int type) throws Exception {
+	public String getRemitInfo(String id,int type) throws Exception {
 		// TODO Auto-generated method stub
 		String url = "/api/v1/remit_info.do";
 		Map<String, String> params = new HashMap<String, String>();
-		params.put("remit_id",remitId+"");
+		params.put("id",id);  
 		params.put("type",type+"");
 		return httpUtil.doPOST(url, params);
 	}
@@ -144,29 +144,29 @@ public class OKLinkImpl implements OKLink {
 		return httpUtil.doPOST(url, params);
 	}
 
-	public String accept(long remitId) throws Exception {
+	public String accept(String id) throws Exception {
 		// TODO Auto-generated method stub
 		String url = "/api/v1/accept.do";
 		Map<String, String> params = new HashMap<String, String>();
-		params.put("remit_id",remitId+"");
+		params.put("id",id);  
 		return httpUtil.doPOST(url, params);
 	}
 
 	@Override
-	public String getReciveInfo(long remitId) throws Exception {
+	public String getReciveInfo(String id) throws Exception {
 		// TODO Auto-generated method stub
 		String url = "/api/v1/receive_info.do";
 		Map<String, String> params = new HashMap<String, String>();
-		params.put("remit_id",remitId+"");
+		params.put("id",id);  
 		return httpUtil.doPOST(url, params);
 	}
 
 
-	public String appealReceive(long remitId, int pickupCode, String receiveHex) throws Exception {
+	public String appealReceive(String id, int pickupCode, String receiveHex) throws Exception {
 		// TODO Auto-generated method stub
 		String url = "/api/v1/appeal_receive.do";
 		Map<String, String> params = new HashMap<String, String>();
-		params.put("remit_id",remitId+"");
+		params.put("id",id);
 		params.put("pickup_code", pickupCode+"");
 		params.put("receive_hex",receiveHex );
 		return httpUtil.doPOST(url, params);
@@ -190,22 +190,22 @@ public class OKLinkImpl implements OKLink {
 
 
 	@Override
-	public String reject(long remitId,String hex,String reason) throws Exception {
+	public String reject(String id,String hex,String reason) throws Exception {
 		// TODO Auto-generated method stub
 		String url = "/api/v1/reject.do";
 		Map<String, String> params = new HashMap<String, String>();
-		params.put("remit_id",remitId+"");
+		params.put("id",id);  
 		params.put("reject_hex",hex);
 		params.put("reason", reason);
 		return httpUtil.doPOST(url, params);
 	}
 
 	@Override
-	public String getRejectInfo(long remitId) throws Exception {
+	public String getRejectInfo(String id) throws Exception {
 		// TODO Auto-generated method stub
 		String url = "/api/v1/get_rejectinfo.do";
 		Map<String, String> params = new HashMap<String, String>();
-		params.put("remit_id",remitId+"");
+		params.put("id",id);  
 		return httpUtil.doPOST(url, params);
 	}
 

@@ -7,4 +7,4 @@
     jdk1.7: http://www.oracle.com/technetwork/java/javase/downloads/jce-7-download-432124.html
     jdk1.8: http://www.oracle.com/technetwork/java/javase/downloads/jce8-download-2133166.html
 3、 bitcoinj-core-ok-0.15-SNAPSHOT.jar
-https://github.com/okinc/bitcoinj
+https://github.com/okinc/bitcoinj/tree/oktoken
