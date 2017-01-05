@@ -23,6 +23,9 @@ public interface OKLink {
 	public String getRejectInfo(String id)throws Exception;
 	public String reject(String id,String hex,String reason)throws Exception;
 	
+	public String getReFundInfo(String id)throws Exception;
+	public String refund(String id,String hex)throws Exception;
+	
 	public String getReciveInfo(String id)throws Exception;
 	public String appealReceive(String id,int pickupCode,String receiveHex)throws Exception;
 	public String getUserInfo()throws Exception;

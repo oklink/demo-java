@@ -218,6 +218,25 @@ public class OKLinkImpl implements OKLink {
 		return httpUtil.doPOST(url, params);
 	}
 
+	@Override
+	public String getReFundInfo(String id) throws Exception {
+		// TODO Auto-generated method stub
+		String url = "/api/v1/get_refundinfo.do";
+		Map<String, String> params = new HashMap<String, String>();
+		params.put("id",id);  
+		return httpUtil.doPOST(url, params);
+	}
+
+	@Override
+	public String refund(String id, String hex) throws Exception {
+		// TODO Auto-generated method stub
+		String url = "/api/v1/refund.do";
+		Map<String, String> params = new HashMap<String, String>();
+		params.put("id",id);  
+		params.put("refund_hex",hex);
+		return httpUtil.doPOST(url, params);
+	}
+
 	
 	
 
