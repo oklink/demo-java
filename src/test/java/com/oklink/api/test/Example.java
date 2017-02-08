@@ -1,5 +1,8 @@
 package com.oklink.api.test;
 
+import java.util.HashMap;
+import java.util.Map;
+
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
 import com.oklink.api.OKLink;
@@ -11,22 +14,39 @@ public class Example {
 	
 	private static final String KEY = null;  //apikey	
 	private static final String SECRET = null;//secretkey
+
 	public static void main(String[] args) throws Exception {
 		OKLink oklink = OKLinkBuilder.getInstance().setHost("https://www.oklink.com")
                 .build(KEY, SECRET);
 		  String result = null;
 		 //#common api
-		
 		 //result = oklink.getTicker("EXRATE");
 		 //result = oklink.getCountryList();
-		  
-		 //#setting api
-		 //result = oklink.setDeliveryStatus(1);
-		  
+	      
 		 //#remitance api 
-		 //result = oklink.getBankInfo(82);
-	     //result = oklink.createRemit(82,1,2,0,299,"san1##zhang","86,15001137489","","si1##li","1985-10-12","PASSPORT","2343","86,15001137489","","6129@11122222333",0,"wallet234",0,true) ;  //269
-		 //result = oklink.getRemitInfo("81qxFhp6QP4W3Q",1);
+		  
+		 //Step 1 get detail format 
+		 //result = oklink.getDetailInfo("143","2");
+		  
+		 //Step 2 build detail info
+		 //Map<String,Object> detail_info = new HashMap<String,Object>();
+		 //detail_info.put("bank_acc_number","6214830128503751");
+		 //detail_info.put("bank_id", 5);
+		 //Map<String,Object> beneficiary = new HashMap<String,Object>();
+		 //               beneficiary.put("full_name", "Rachle");
+		 //               beneficiary.put("mobile_number", "86,186000001");
+		 //               beneficiary.put("email", "b@test.com");
+		                
+	     //detail_info.put("beneficiary",beneficiary);
+	     //Map<String,Object> remitter = new HashMap<String,Object>();
+	     //               remitter.put("full_name", "John");
+	     //               remitter.put("mobile_number", "85,15001137489");
+	     //               remitter.put("email", "a@test.com");		                    
+	     // detail_info.put("remitter", remitter);
+		  
+		 //Step3
+	     //result = oklink.createRemit(40,1,2,1010,0,1,JSON.toJSONString(detail_info),true) ;  //269
+		 //result = oklink.getRemitInfo("9rWNGKYMw4i3iU",1);
 		 //result = oklink.getRemitList(2, 1, 10, 5);
 		
 		 //#pay
