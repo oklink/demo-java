@@ -6,3 +6,6 @@
     jdk1.8: http://www.oracle.com/technetwork/java/javase/downloads/jce8-download-2133166.html</br>
 3、 bitcoinj-core-ok-0.15-SNAPSHOT.jar</br>
     https://github.com/okinc/bitcoinj/tree/oktoken</br>
+4、SignByJS
+   
+   We provide a SignTool with JS version , please see dir /SignByJs
