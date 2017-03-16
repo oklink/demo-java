@@ -7,3 +7,5 @@
 3、SignByJS
    
    We provide a SignTool with JS version , please see dir /SignByJs
+4、bitcoinj-core-ok-0.15-SNAPSHOT.jar 
+   see /lib

@@ -12,16 +12,16 @@ import com.oklink.api.util.SignTool;
 public class Example {
 	
 	
-	private static final String KEY = null;  //apikey	
-	private static final String SECRET = null;//secretkey
+	private static final String KEY = "8bd9c9e6-f978-4a14-8cbb-32231def8a26";  //apikey	
+	private static final String SECRET = "54FE4F8EBA2F39A421F6A40FF5A1600C";//secretkey
 
 	public static void main(String[] args) throws Exception {
-		OKLink oklink = OKLinkBuilder.getInstance().setHost("https://www.oklink.com")
+		OKLink oklink = OKLinkBuilder.getInstance().setHost("http://test.oklink.com")
                 .build(KEY, SECRET);
 		  String result = null;
 		 //#common api
-		 //result = oklink.getTicker("EXRATE");
-		 //result = oklink.getCountryList();
+		 //result = oklink.getTicker("BTC");
+		 result = oklink.getCountryList();
 	      
 		 //#remitance api 
 		  
@@ -29,24 +29,27 @@ public class Example {
 		 //result = oklink.getDetailInfo("143","2");
 		  
 		 //Step 2 build detail info
-		 //Map<String,Object> detail_info = new HashMap<String,Object>();
-		 //detail_info.put("bank_acc_number","6214830128503751");
-		 //detail_info.put("bank_id", 5);
-		 //Map<String,Object> beneficiary = new HashMap<String,Object>();
-		 //               beneficiary.put("full_name", "Rachle");
-		 //               beneficiary.put("mobile_number", "86,186000001");
-		 //               beneficiary.put("email", "b@test.com");
-		                
-	     //detail_info.put("beneficiary",beneficiary);
-	     //Map<String,Object> remitter = new HashMap<String,Object>();
-	     //               remitter.put("full_name", "John");
-	     //               remitter.put("mobile_number", "85,15001137489");
-	     //               remitter.put("email", "a@test.com");		                    
-	     // detail_info.put("remitter", remitter);
+		 Map<String,Object> detail_info = new HashMap<String,Object>();
+		 detail_info.put("bank_id", 41);
+		detail_info.put("bank_acc_number","12321q3");
+		 Map<String,Object> beneficiary = new HashMap<String,Object>();
+		                 beneficiary.put("full_name", "jimmy");
+		                beneficiary.put("mobile_number", "86,186000001");
+		                beneficiary.put("email", "b@test.com");
+		              
+	     detail_info.put("beneficiary",beneficiary);
+	     Map<String,Object> remitter = new HashMap<String,Object>();
+	                    remitter.put("full_name", "John");
+	                    remitter.put("mobile_number", "85,15001137489");
+	                    remitter.put("email", "a@test.com");
+	                  
+	                    
+	                    
+	      detail_info.put("remitter", remitter);
 		  
 		 //Step3
-	     //result = oklink.createRemit(40,1,2,1010,0,1,JSON.toJSONString(detail_info),true) ;  //269
-		 //result = oklink.getRemitInfo("9rWNGKYMw4i3iU",1);
+	    result = oklink.createRemit(143,1,2,100,0,1,JSON.toJSONString(detail_info),true) ;  //269
+		 //result = oklink.getRemitInfo("DLBpc4y3LgnEhH",1);
 		 //result = oklink.getRemitList(2, 1, 10, 5);
 		
 		 //#pay
