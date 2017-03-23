@@ -1,17 +1,7 @@
 package com.oklink.api;
 
-import java.io.File;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
-
-import org.apache.http.entity.mime.MultipartEntityBuilder;
-
-import com.alibaba.fastjson.JSON;
-import com.alibaba.fastjson.JSONObject;
-import com.squareup.okhttp.MultipartBuilder;
 
 public class OKLinkImpl implements OKLink {
 	
