@@ -61,7 +61,17 @@
 		    <artifactId>core</artifactId>
 		    <version>1.54.0.0</version>
 		</dependency>
-
+     <dependency>
+			<groupId>com.oklink</groupId>
+			<artifactId>oklink-client-sdk</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
+			<exclusions>
+               <exclusion>
+                  <groupId>org.slf4j</groupId>
+			      <artifactId>slf4j-simple</artifactId>
+                </exclusion>
+            </exclusions>
+		</dependency>
         <dependency>
             <groupId>org.bouncycastle</groupId>
             <artifactId>bcprov-jdk16</artifactId>
