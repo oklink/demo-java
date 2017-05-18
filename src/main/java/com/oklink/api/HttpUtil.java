@@ -2,13 +2,20 @@ package com.oklink.api;
 
 
 import java.io.File;
+import java.io.IOException;
 import java.io.InputStream;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 import org.apache.commons.io.IOUtils;
 import org.apache.http.HttpEntity;
 import org.apache.http.HttpResponse;
+import org.apache.http.NameValuePair;
+import org.apache.http.client.ClientProtocolException;
 import org.apache.http.client.HttpClient;
+import org.apache.http.client.entity.UrlEncodedFormEntity;
 import org.apache.http.client.methods.HttpDelete;
 import org.apache.http.client.methods.HttpGet;
 import org.apache.http.client.methods.HttpPost;
@@ -18,7 +25,11 @@ import org.apache.http.entity.FileEntity;
 import org.apache.http.entity.StringEntity;
 import org.apache.http.entity.mime.MultipartEntity;
 import org.apache.http.entity.mime.MultipartEntityBuilder;
+import org.apache.http.impl.client.DefaultHttpClient;
 import org.apache.http.impl.client.HttpClientBuilder;
+import org.apache.http.message.BasicNameValuePair;
+import org.apache.http.protocol.HTTP;
+import org.apache.http.util.EntityUtils;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.oklink.api.util.Coder;
@@ -38,7 +49,7 @@ public class HttpUtil {
 	
 	HttpUtil(String apiKey, String apiSecret, String host) {
 		if(host == null || host.length()<=0) {
-			this.baseUrl = "http://localtest.oklink.com";
+			this.baseUrl = "http://testlocal.intra.oklink.com";
 		} else {
 			this.baseUrl = host;
 		}
@@ -267,4 +278,5 @@ public class HttpUtil {
             }
 		}
 	}
+	
 }

@@ -20,10 +20,15 @@ public class OKLinkImpl implements OKLink {
 	}
 	
 	@Override
-	public String getCountryList() throws Exception {
+	public String getCountryList(String scope) throws Exception {
 		// TODO Auto-generated method stub
 		String nationsUrl = "/api/v2/country.do";
-		return httpUtil.doPOST(nationsUrl, null);
+		Map<String, String> params  = null;
+		if(scope!=null){
+			params = new HashMap<String, String>();
+			params.put("scope",scope);  
+		}
+		return httpUtil.doPOST(nationsUrl, params);
 	}
 	
 	@Override
@@ -196,6 +201,16 @@ public class OKLinkImpl implements OKLink {
 		Map<String, String> params = new HashMap<String, String>();
 		params.put("id",id);  
 		params.put("refund_hex",hex);
+		return httpUtil.doPOST(url, params);
+	}
+
+	@Override
+	public String getRemittanceLimit(String countryId, String paymode) throws Exception {
+		// TODO Auto-generated method stub
+		String url = "/api/v2/remittance_limit.do";
+		Map<String, String> params = new HashMap<String, String>();
+		params.put("country_id",countryId);  
+		params.put("pay_mode",paymode);
 		return httpUtil.doPOST(url, params);
 	}
 

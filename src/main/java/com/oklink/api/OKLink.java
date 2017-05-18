@@ -4,7 +4,8 @@ public interface OKLink {
 	
 	
 	public String getTicker(String symbol) throws Exception;
-	public String getCountryList()throws Exception;
+	public String getCountryList(String scope)throws Exception;
+	public String getRemittanceLimit(String countryId,String paymode)throws Exception;
 	
 	public String getDetailInfo(String countryId,String payMode)throws Exception;
 	
